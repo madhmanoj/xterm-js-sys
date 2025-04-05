@@ -16,3 +16,18 @@ extern "C" {
     pub fn write(this: &Terminal, data: &str);
 }
 
+// FitAddon bindings
+#[wasm_bindgen(module = "@xterm/addon-fit")]
+extern "C" {
+    #[derive(Clone)]
+    pub type FitAddon;
+
+    #[wasm_bindgen(constructor)]
+    pub fn new() -> FitAddon;
+
+    #[wasm_bindgen(method)]
+    pub fn fit(this: &FitAddon);
+
+    #[wasm_bindgen(method)]
+    pub fn activate(this: &FitAddon, terminal: &Terminal);
+}
