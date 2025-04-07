@@ -14,6 +14,12 @@ extern "C" {
 
     #[wasm_bindgen(method)]
     pub fn write(this: &Terminal, data: &str);
+
+    #[wasm_bindgen(method)]
+    pub unsafe fn cols(this: &Terminal) -> u16;
+
+    #[wasm_bindgen(method)]
+    pub unsafe fn rows(this: &Terminal) -> u16;
 }
 
 // FitAddon bindings
@@ -27,7 +33,4 @@ extern "C" {
 
     #[wasm_bindgen(method)]
     pub fn fit(this: &FitAddon);
-
-    #[wasm_bindgen(method)]
-    pub fn activate(this: &FitAddon, terminal: &Terminal);
 }
