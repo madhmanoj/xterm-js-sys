@@ -16,10 +16,10 @@ extern "C" {
     pub fn write(this: &Terminal, data: &str);
 
     #[wasm_bindgen(method)]
-    pub unsafe fn cols(this: &Terminal) -> u16;
+    pub fn resize(this: &Terminal, columns: u16, rows: u16);
 
     #[wasm_bindgen(method)]
-    pub unsafe fn rows(this: &Terminal) -> u16;
+    pub fn loadAddon(this: &Terminal, addon: &FitAddon);
 }
 
 // FitAddon bindings
